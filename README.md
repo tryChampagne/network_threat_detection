@@ -1,27 +1,30 @@
-# purpose:
+## Purpose:
     to detect network attack/threats using zeek.
 
-## prerequisites:
+## Prerequisites:
     tools:
         system: Linux
         zeek version  : 8.0.0-dev.204
+        
     basic understanding of:
         zeek scripts
         pcap files
         bash script
 
-## side work:
+### Side work:
     gathering LAN Devices information.
         information could be their 'Hostname'.
+        
     getting more from arp using oui database.
         oui :organization unique identifier OR  vendors of NIC card.
         for guessing the LAN device Operating System.
 
 
-# how to use it?
+## How to use it?
     step1:
-        having met the requirements ,run 'hello_world.zeek' script using zeek as follow:
+        having met the requirements ,run 'hello_world.zeek' script as follow:
             sudo zeek -C -i wlan0 hello_world.zeek
+            
         hopefully it gives output similar to below
         <screenshot to be added>
         which indicates our zeek setup is neet and clean.
@@ -31,6 +34,7 @@
             -ddos attack [dns_ddos.zeek]
             -ssh brute force attack [ssh_brute.zeek]
             -syn flood attack   [syn_flood.zeek]
+            
         now in order to detect an attack first we need to simulate it(assuming you are not already under such attacks).
         zeek will do this work for us ,we just need to replay a precaptured network traffic that is malicious and this traffic is come under format called pcap files.
         so now simply run:
